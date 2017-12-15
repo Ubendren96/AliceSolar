@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
-        String url = "https://stoneware-hickories.000webhostapp.com/jsonfile.json";
+        String url = "https://stoneware-hickories.000webhostapp.com/Mainmenu.json";
         //http://stacktips.com/?json=get_category_posts&slug=news&count=30
         new DownloadTask().execute(url);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -101,7 +101,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     parseResult(response.toString());
                     result = 1; // Successful
                 } else {
-                    result = 0; //"Failed to fetch data!";
+                    result = 0; //"Fai
+                    // led to fetch data!";
                 }
             } catch (Exception e) {
                 Log.d(TAG, e.getLocalizedMessage());
@@ -120,7 +121,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     @Override
                     public void onItemClick(FeedItem item) {
 //                        Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_LONG).show();
-                        intent=new Intent(MainActivity.this,Inverter.class);
+                        switch (item.getTitle()){
+                            case "Inverter":
+                                Products.category="Inverter";
+                                break;
+                            case "Battery":
+                                Products.category="Battery";
+                                break;
+                            default:
+                                Products.category="Inverter";
+                                break;
+                        }
+                        intent=new Intent(MainActivity.this,Products.class);
                         startActivity(intent);
                     }
                 });

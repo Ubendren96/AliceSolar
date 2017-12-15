@@ -21,28 +21,30 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Inverter extends AppCompatActivity {
+public class Products extends AppCompatActivity {
 
     private List<FeedItem> feedsList;
     private RecyclerView mRecyclerView;
     private MyRecyclerViewAdapter adapter;
     private ProgressBar progressBar;
     static final String TAG="Inverter";
-    String url;
+    static String category;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inverter);
+        setContentView(R.layout.activity_products);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
-        url = "https://stoneware-hickories.000webhostapp.com/jsonfile.json";
+        String url = "https://stoneware-hickories.000webhostapp.com/"+category+".json";
 
         //http://stacktips.com/?json=get_category_posts&slug=news&count=30
-        new DownloadTask().execute(url);
+        new Products.DownloadTask().execute(url);
     }
 
 
@@ -86,18 +88,18 @@ public class Inverter extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
 
             if (result == 1) {
-                adapter = new MyRecyclerViewAdapter(Inverter.this, feedsList);
+                adapter = new MyRecyclerViewAdapter(Products.this, feedsList);
                 mRecyclerView.setAdapter(adapter);
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(FeedItem item) {
-                        Toast.makeText(Inverter.this, item.getTitle(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Products.this, item.getTitle(), Toast.LENGTH_LONG).show();
 
                     }
                 });
 
             } else {
-                Toast.makeText(Inverter.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Products.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -118,5 +120,4 @@ public class Inverter extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-}
+    }}
