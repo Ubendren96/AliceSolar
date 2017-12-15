@@ -25,7 +25,8 @@ public class Products extends AppCompatActivity {
 
     private List<FeedItem> feedsList;
     private RecyclerView mRecyclerView;
-    private MyRecyclerViewAdapter adapter;
+    private
+    MyRecyclerViewAdapter adapter;
     private ProgressBar progressBar;
     static final String TAG="Inverter";
     static String category;

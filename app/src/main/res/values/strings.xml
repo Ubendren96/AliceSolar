@@ -24,4 +24,5 @@
     <string name="action_settings">Settings</string>
     <string name="alice_logo">Alice_logo</string>
     <string name="welcome_to_alice">welcome to ALICE</string>
+    <string name="title_activity_main4">Main4Activity</string>
 </resources>
