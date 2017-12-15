@@ -1,5 +1,6 @@
 package io.ubendren.imageprocessing;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView mRecyclerView;
     private MyRecyclerViewAdapter adapter;
     private ProgressBar progressBar;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,8 +119,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 adapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(FeedItem item) {
-                        Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_LONG).show();
-
+//                        Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_LONG).show();
+                        intent=new Intent(MainActivity.this,Inverter.class);
+                        startActivity(intent);
                     }
                 });
 
@@ -184,13 +187,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_ineverter) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_batery) {
 
         } else if (id == R.id.nav_share) {
 
