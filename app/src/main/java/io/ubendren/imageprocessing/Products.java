@@ -97,6 +97,11 @@ public class Products extends AppCompatActivity {
                         Toast.makeText(Products.this, item.getTitle(), Toast.LENGTH_LONG).show();
 
                     }
+
+                    @Override
+                    public void onItemClick(OfferItem item) {
+                        Toast.makeText(Products.this, item.getOffer_title(), Toast.LENGTH_LONG).show();
+                    }
                 });
 
             } else {

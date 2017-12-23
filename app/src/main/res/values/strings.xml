@@ -25,4 +25,9 @@
     <string name="alice_logo">Alice_logo</string>
     <string name="welcome_to_alice">welcome to ALICE</string>
     <string name="title_activity_main4">Main4Activity</string>
+    <string name="refresh">Refresh</string>
+    <string name="login_progress_signing_in">Signing in</string>
+    <string name="action_forgot_password">Forgot Password</string>
+    <string name="action_close_session">Logout</string>
+    <string name="action_sign_in_register">Sign in</string>
 </resources>

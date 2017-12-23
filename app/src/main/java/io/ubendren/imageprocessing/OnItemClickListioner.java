@@ -6,4 +6,5 @@ package io.ubendren.imageprocessing;
 
 interface OnItemClickListener {
     void onItemClick(FeedItem item);
+    void onItemClick(OfferItem item);
 }

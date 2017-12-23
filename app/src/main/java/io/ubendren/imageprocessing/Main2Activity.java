@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import io.ubendren.imageprocessing.AccManager.LoginMainActivity;
+
 public class Main2Activity extends AppCompatActivity {
 
     @Override
@@ -14,7 +16,7 @@ public class Main2Activity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainintent = new Intent(Main2Activity.this,LoginActivity.class);
+                Intent mainintent = new Intent(Main2Activity.this,MainActivity.class);
                 startActivity(mainintent);
                 finish();
             }
